@@ -1,4 +1,4 @@
-from aiogram import Router
+from aiogram import Router, F
 from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
@@ -9,7 +9,7 @@ from config import *
 
 router = Router()
 
-@router.message(CommandStart())
+@router.message(CommandStart(), F.chat.type=="private")
 async def start(message: Message, state: FSMContext):
     state_data = await state.get_data()
     if state_data == {}:
