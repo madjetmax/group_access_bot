@@ -32,6 +32,6 @@ async def start(message: Message, state: FSMContext):
     else:
         await message.answer(START_TEST_AGAIN_TEXT, reply_markup=None)
 
-@router.message(Command(commands=["rules"]))
+@router.message(Command(commands=["rules"]), F.chat.type=="private")
 async def get_rules(message: Message):
     await message.answer(RULES)
