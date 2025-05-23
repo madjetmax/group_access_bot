@@ -11,9 +11,7 @@ import asyncio
 
 import datetime
 
-
 router = Router()
-
 
 def get_question_data(ind) -> dict | None:
     if ind >= len(ALL_QUESTIONS):

@@ -7,4 +7,4 @@ class TestProgress(StatesGroup):
     answers = State()
     correct_answers = State()
 
-    messages_to_delete = State()
+    messages_to_delete = State() # ids
